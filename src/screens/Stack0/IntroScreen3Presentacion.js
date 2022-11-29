@@ -1,10 +1,21 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { View, Text, ImageBackground, StyleSheet,Button, Image, TouchableOpacity } from 'react-native'
+import { Getinfo} from '../../Tabs';
 
 const IntroScreen3Presentacion = () => {
+  const [isSelected, setSelection] = useState(false);
+
+  const handleJoin = () => {
+    setSelection(current => !current);
+  }
   return (
     <View style={styles.containerPapa}>
-      <Text>Hola</Text>
+      <TouchableOpacity  
+                    style={styles.button}
+                    onPress={handleJoin}>
+                    <Text style={styles.text2}>Empeza la aventura</Text>
+                    <Getinfo  handleJoin={isSelected} />
+                </TouchableOpacity>
     </View>
   );
 }
@@ -17,42 +28,19 @@ const styles = StyleSheet.create({
       backgroundColor:'#1F646D',
       alignItems:'center',
     },
-  logo: {
-      position: 'absolute',
-      width: 380,
-      height: 380,
-      //resizeMode:"center",
-  },
-  text: {
-      paddingTop:350,
-      fontSize: 50,
-      color: '#AAADAC',
-      fontWeight: 'bold'
-    },
-  contaner:{
-      position: 'absolute',
-      marginTop:'120%',
-      height:268,
-      width:390,
+    button:{
+      width:250,
+      height:40,
+      borderRadius:10,
+      backgroundColor:"#FFAD2B",
       alignItems:'center',
-  },
-  button: {
-      marginTop:'40%',
-      borderRadius: 20,
-      borderWidth: 6,
-      borderColor: "#315259",
-      width: '70%',
-      height: '25%',
-      backgroundColor:'#FFFFFF',
-      alignItems:'center',
-      textAlignVertical:'center',
       justifyContent: 'center',
-  },
-  text2: {
-      fontSize: 30,
-      color: '#315259',
-      fontWeight: 'bold'
+      marginVetical:10,
+      marginTop:28,
+      borderColor:'#fff',
+      borderWidth:2,
     },
+  
 })
 
 

@@ -4,7 +4,6 @@ import { View, Text, ImageBackground, StyleSheet,Button, Image, TouchableOpacity
 
 const yourPicture = require('../../../imagenes/FondoIntro0.png')
 
-
 export const IntroScreen0Empezar = () => {
     const navigation=useNavigation();
     return (

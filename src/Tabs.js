@@ -12,7 +12,7 @@ import StackScreen3Progreso from './stacks/StackScreen3Progreso';
 import StackScreen4Calendario from './stacks/StackScreen3Progreso';
 
 
-export const Tabmenu2= () => {
+/*export const Tabmenu2= () => {
     const tabbool=false;
     if(tabbool){
     const Tab = createBottomTabNavigator();
@@ -66,17 +66,66 @@ export const Tabmenu2= () => {
                 />
     </Tab.Navigator>)
 }
+}*/
+
+export const Getinfo = ({handleJoin}) => {
+    console.log(handleJoin);
+    const Tab = createBottomTabNavigator();
+    if(handleJoin=="true"){
+        return (
+            <Tab.Navigator>
+                <Tab.Screen 
+                    name="InicioMenu" 
+                    component={StackScreen1Inicio}
+                    options={{
+                        headerShown: false,
+                    }}/>
+                <Tab.Screen 
+                    name="RetosMenu" 
+                    component={StackScreen2Retos}
+                    options={{
+                        headerShown: false,
+                    }}/>
+                <Tab.Screen 
+                    name="ProgresoMenu" 
+                    component={StackScreen3Progreso}
+                    options={{
+                        headerShown: false,
+                    }}/>
+                <Tab.Screen 
+                    name="CalendarioMenu" 
+                    component={StackScreen4Calendario}
+                    options={{
+                        headerShown: false,
+                    }}/>
+                <Tab.Screen 
+                    name="PerfilMenu" 
+                    component={StackScreen5Perfil}
+                    options={{
+                        headerShown: false,
+                    }}/>
+            </Tab.Navigator>
+        );
+    }else{
+        return (
+        <Tab.Navigator>
+            <Tab.Screen 
+                name="IntoMenu"
+                component={StackScreen0Intro}
+                options={{
+                    headerShown: false,
+                    tabBarStyle: { display: 'none'},
+                }}
+            />
+        </Tab.Navigator>
+          );  
+    }
 }
 
-
-const Tabs = () => {    
-    return (
-        <NavigationContainer>
-            <Tabmenu2 />
-        </NavigationContainer>
-    )
-    
-
+export const Tabnavigation = () => {
+  return (
+    <NavigationContainer>
+        <Getinfo />
+    </NavigationContainer>
+  )
 }
-
-export default Tabs
