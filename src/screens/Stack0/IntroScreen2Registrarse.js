@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import {getAuth,createUserWithEmailAndPassword} from 'firebase/auth';
 import {initializeApp} from 'firebase/app';
 import { firebaseConfig } from '../../../firebase-config';
+import {  getDatabase, ref, set } from "firebase/database";
 
 const yourPicture = require('../../../imagenes/Registro.png')
 
@@ -18,7 +19,9 @@ function RegisterScreen(){
 
   const app=initializeApp(firebaseConfig);
   const auth=getAuth(app);
+  const db=getDatabase(app);
 
+  
   const refpass= () =>{
     if(contra===contracon){
       console.log("Contraseña igual");
@@ -34,13 +37,30 @@ function RegisterScreen(){
       console.log('Account created!')
       const user = userCredential.user
       console.log(user)
-      navigation.navigate('Intro2')
+      handleCreaUserdatabase()
     })
     .catch(error => {
       console.log(error)
       Alert.alert(error.message)
     })
   }
+
+  const handleCreaUserdatabase = () =>{
+    set(ref(db, 'users/' + nombre), {
+      username: nombre+" "+apellido,
+      email: correo,
+      curse: grado,
+      password: contracon
+    }).then(()=>{
+      alert('Data submitted!');
+      navigation.navigate('Intro2')
+    }).catch(error => {
+      console.log(error)
+      Alert.alert(error.message)
+    })
+  }
+  
+  
   const navigation=useNavigation();
   return (
     <View style={styles.container}>

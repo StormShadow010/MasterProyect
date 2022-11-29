@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { useNavigation } from '@react-navigation/native';
-import { View, Text, ImageBackground, StyleSheet,Button, Image, TouchableOpacity } from 'react-native'
+import { View, Text, ImageBackground, StyleSheet,Button, Image, TouchableOpacity} from 'react-native'
 
 const yourPicture = require('../../../imagenes/FondoIntro0.png')
 
