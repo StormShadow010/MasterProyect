@@ -13,7 +13,7 @@ import StackScreen4Calendario from './stacks/StackScreen3Progreso';
 
 
 export const Tabmenu2= () => {
-    const tabbool=true;
+    const tabbool=false;
     if(tabbool){
     const Tab = createBottomTabNavigator();
     return (

@@ -3,39 +3,29 @@ import { useNavigation } from '@react-navigation/native';
 import { View, Text, ImageBackground, StyleSheet,Button, Image, TouchableOpacity } from 'react-native'
 
 const yourPicture = require('../../../imagenes/FondoIntro0.png')
-//<ImageBackground source={yourPicture} resizeMode="cover" style={styles.image}></ImageBackground>
-const IntroScreen0Empezar = () => {
-    const [isSelected, setSelection] = useState(false);
 
-    const handleJoin = () => {
-        setSelection(current => !current);
-    }
 
+export const IntroScreen0Empezar = () => {
     const navigation=useNavigation();
-  return (
-    <View style={styles.containerPapa}>
-        <Image
-            style={styles.logo}
-            source={require('../../../imagenes/logo.png')}
-        />
-        <Text style={styles.text}>Py.pro</Text>
-        <ImageBackground
-            style={styles.contaner}
-            source={require('../../../imagenes/OndasIntro.png')}
-        >
-            <TouchableOpacity  
-            style={styles.button}
-            onPress={()=> navigation.navigate("Intro4")}>
-                <Text style={styles.text2}>Empecemos</Text>
-            </TouchableOpacity>
-        </ImageBackground>
-        
-        
+    return (
+        <View style={styles.containerPapa}>
+            <Image
+                style={styles.logo}
+                source={require('../../../imagenes/logo.png')}/>
+            <Text style={styles.text}>Py.pro</Text>
+            <ImageBackground
+                style={styles.containerondas}
+                source={require('../../../imagenes/OndasIntro.png')}>
+                <TouchableOpacity  
+                    style={styles.button}
+                    onPress={()=> navigation.navigate("Intro2")}>
+                    <Text style={styles.text2}>Empecemos</Text>
+                </TouchableOpacity>
+            </ImageBackground>
     </View>
-    
-    
-  )
+  );
 }
+
 const styles = StyleSheet.create({
     containerPapa: {
         paddingTop:15,
@@ -48,7 +38,6 @@ const styles = StyleSheet.create({
         position: 'absolute',
         width: 380,
         height: 380,
-        //resizeMode:"center",
     },
     text: {
         paddingTop:350,
@@ -56,7 +45,7 @@ const styles = StyleSheet.create({
         color: '#AAADAC',
         fontWeight: 'bold'
       },
-    contaner:{
+    containerondas:{
         position: 'absolute',
         marginTop:'120%',
         height:268,
@@ -81,5 +70,3 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
       },
 })
-
-export default IntroScreen0Empezar

@@ -2,9 +2,9 @@ import React from 'react'
 import { View, Text, Image } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack' // crea un stack de navegacion nativo para el telefono
 //Screens
-import IntroScreen0Empezar from '../screens/Stack0/IntroScreen0Empezar';
-import IntroScreen1Ingresar from '../screens/Stack0/IntroScreen1Ingresar';
-import IntroScreen2Registrarse from '../screens/Stack0/IntroScreen2Registrarse';
+import {IntroScreen0Empezar} from '../screens/Stack0/IntroScreen0Empezar';
+import {IntroScreen1Ingresar} from '../screens/Stack0/IntroScreen1Ingresar';
+import {IntroScreen2Registrarse} from '../screens/Stack0/IntroScreen2Registrarse';
 import IntroScreen3Presentacion from '../screens/Stack0/IntroScreen3Presentacion';
 //import { useFonts } from '@expo-google-fonts/montserrat'
 import { useFonts } from 'expo-font';
@@ -69,15 +69,22 @@ const StackScreen0Intro = () => {
                 name="Intro3" 
                 component={IntroScreen2Registrarse}
                 options={{
-                    title:false,
-                    headerTitle:{
-                        color: 'white',
-                    },
-                    headerBackImage: BackImage,
-                    headerStyle: {
-                        backgroundColor: 'transparent',
-                        shadowColor: 'transparent',
-                    },
+                  title:"Registro",
+                  headerTitleStyle: {
+                    fontWeight: 'bold',
+                    color:'#ffffff',
+                    fontFamily: 'Monstrat',
+                    fontSize:25,
+                    marginLeft:-30,
+                  },
+                  headerTransparent: true,
+                  headerBackImage: BackImage,
+                  headerStyle: {
+                      backgroundColor: 'transparent',
+                      shadowColor: 'transparent',
+                      
+                  },
+                  headerBackground:FondoHeader,
                     }}/>
             <IntoStack.Screen 
                 name="Intro4" 

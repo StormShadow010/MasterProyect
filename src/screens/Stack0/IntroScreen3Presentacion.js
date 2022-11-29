@@ -1,19 +1,12 @@
-import React from 'react'
+import React from 'react';
 import { View, Text, ImageBackground, StyleSheet,Button, Image, TouchableOpacity } from 'react-native'
 
 const IntroScreen3Presentacion = () => {
-  const data = "none";
-  //const activaciontab=Tabmenu2();
   return (
-    <View>
-      <TouchableOpacity  
-            style={styles.button}
-          >
-                <Text style={styles.text2}>Empecemos</Text>
-            </TouchableOpacity>
-
+    <View style={styles.containerPapa}>
+      <Text>Hola</Text>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
