@@ -8,7 +8,7 @@ const FondoHeader = () => (
   <Image
     source={require('../../imagenes/header.png')}
     //style={{width: 300, height: '180%', }}
-    style={{width: '100%', height: '100%'}}
+    style={{width: '100%', height: '180%'}}
   />
 );
 

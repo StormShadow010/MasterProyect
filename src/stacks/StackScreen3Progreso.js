@@ -3,7 +3,7 @@ import { View, Text, Image } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack'
 import ProgresoScreen0 from '../screens/Stack3/ProgresoScreen0';
 
-const StackScreen4Calendario = () => {
+const StackScreen3Progreso = () => {
   const IntoStack = createStackNavigator();
   
     return (
@@ -22,4 +22,4 @@ const StackScreen4Calendario = () => {
     )
 }
 
-export default StackScreen4Calendario
+export default StackScreen3Progreso

@@ -3,7 +3,7 @@ import { View, Text, Image } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack'
 import CalendarioScreen0 from '../screens/Stack4/CalendarioScreen0';
 
-const StackScreenIntro = () => {
+const StackScreen4Calendario = () => {
   const IntoStack = createStackNavigator();
     return (
         <IntoStack.Navigator>
@@ -21,4 +21,4 @@ const StackScreenIntro = () => {
     )
 }
 
-export default StackScreenIntro
+export default StackScreen4Calendario

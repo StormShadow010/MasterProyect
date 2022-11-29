@@ -28,14 +28,10 @@ const BackImage = () => (
 const StackScreen0Intro = () => {
 
   const IntoStack = createStackNavigator();
-  const [fontsLoaded] = useFonts({
-    Monstrat: require('../../assets/fonts/Montserrat-VariableFont_wght.ttf'),
-  });
-
     return (
         <IntoStack.Navigator>
             <IntoStack.Screen 
-                name="Intro1" 
+                name="Intro10" 
                 component={IntroScreen0Empezar}
                 options={{
                     title:false,
@@ -45,7 +41,7 @@ const StackScreen0Intro = () => {
                     },
                 }}/>
             <IntoStack.Screen 
-                name="Intro2" 
+                name="Intro20" 
                 component={IntroScreen1Ingresar}
                 options={{
                     title:"Ingresar",
@@ -66,7 +62,7 @@ const StackScreen0Intro = () => {
                     headerBackground:FondoHeader,
                     }}/>
             <IntoStack.Screen 
-                name="Intro3" 
+                name="Intro30" 
                 component={IntroScreen2Registrarse}
                 options={{
                   title:"Registro",
@@ -87,14 +83,26 @@ const StackScreen0Intro = () => {
                   headerBackground:FondoHeader,
                     }}/>
             <IntoStack.Screen 
-                name="Intro4" 
+                name="Intro40" 
                 component={IntroScreen3Presentacion}
                 options={{
-                  title:false,
+                  title:"Bienvenid@",
+                  headerTitleStyle: {
+                    fontWeight: 'bold',
+                    color:'#ffffff',
+                    fontFamily: 'Monstrat',
+                    fontSize:25,
+                    marginLeft:-30,
+                  },
+                  headerTransparent: true,
+                  headerBackImage: BackImage,
                   headerStyle: {
                       backgroundColor: 'transparent',
+                      shadowColor: 'transparent',
+                      
                   },
-                    }}/>
+                  headerBackground:FondoHeader,
+                  }}/>
         </IntoStack.Navigator>
     )
 }

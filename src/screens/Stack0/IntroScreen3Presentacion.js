@@ -1,20 +1,15 @@
 import React,{useState} from 'react';
 import { View, Text, ImageBackground, StyleSheet,Button, Image, TouchableOpacity } from 'react-native'
-import { Getinfo} from '../../Tabs';
 
-const IntroScreen3Presentacion = () => {
-  const [isSelected, setSelection] = useState(false);
 
-  const handleJoin = () => {
-    setSelection(current => !current);
-  }
+const IntroScreen3Presentacion = ({navigation}) => {
+
   return (
     <View style={styles.containerPapa}>
       <TouchableOpacity  
                     style={styles.button}
-                    onPress={handleJoin}>
+                    onPress={()=> navigation.navigate("Inicio1")}>
                     <Text style={styles.text2}>Empeza la aventura</Text>
-                    <Getinfo  handleJoin={isSelected} />
                 </TouchableOpacity>
     </View>
   );
@@ -22,7 +17,8 @@ const IntroScreen3Presentacion = () => {
 
 const styles = StyleSheet.create({
   containerPapa: {
-      paddingTop:15,
+      marginTop:'15%',
+      paddingTop:'20%',
       height:'100%',
       width:'100%',
       backgroundColor:'#1F646D',

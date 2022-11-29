@@ -1,9 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import {Tabnavigation} from './src/Tabs';
+import StackScreen1Inicio from './src/stacks/StackScreen1Inicio';
+
 
 export default function App() {
-  return <Tabnavigation/>;
+  return <StackScreen1Inicio />
 }
 
 const styles = StyleSheet.create({
