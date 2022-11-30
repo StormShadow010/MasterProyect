@@ -19,6 +19,7 @@ import StackScreen2Retos from './StackScreen2Retos';
 import StackScreen3Progreso from './StackScreen3Progreso';
 import StackScreen4Calendario from './StackScreen4Calendario';
 import StackScreen5Perfi from './StackScreen5Perfil';
+import { Ionicons, AntDesign, MaterialCommunityIcons,Foundation,FontAwesome5   } from "@expo/vector-icons";
 
 const FondoHeader = () => (
   <Image
@@ -52,15 +53,67 @@ const BackImage2 = () => (
 function HomeStack() {
     const Tab = createBottomTabNavigator();
     return (
-        <Tab.Navigator tabBarOptions={{
-            activeTintColor: "#000",
-            activeBackgroundColor: "#feb72b",
+        <Tab.Navigator 
+            screenOptions={{
+                tabBarInactiveBackgroundColor:'#1F646D',
+                tabBarActiveBackgroundColor: "#CCCECE",
+                tabBarShowLabel:false,
           }}>
-        <Tab.Screen name="InicioMenu" component={InicioScreen0Modulos}/>
-        <Tab.Screen name="RetosMenu" component={StackScreen2Retos}/>
-        <Tab.Screen name="ProgresoMenu" component={StackScreen3Progreso}/>
-        <Tab.Screen name="CalendarioMenu" component={StackScreen4Calendario}/>
-        <Tab.Screen name="PerfilMenu" component={StackScreen5Perfi}/>
+        <Tab.Screen name="InicioMenu" component={InicioScreen0Modulos} 
+        options={{
+            tabBarIcon: (tabInfo) => {
+                return (
+                <Ionicons
+                    name="md-home"
+                    size={24}
+                    color={tabInfo.focused ? "#1F646D" : "#ffffff"}
+                />
+                )}
+        }}/>
+        <Tab.Screen name="RetosMenu" component={StackScreen2Retos}
+         options={{
+            tabBarIcon: (tabInfo) => {
+                return (
+                <FontAwesome5 
+                    name="flag-checkered"
+                    size={24}
+                    color={tabInfo.focused ? "#1F646D" : "#ffffff"}
+                />
+                )}
+        }}/>
+        <Tab.Screen name="ProgresoMenu" component={StackScreen3Progreso}
+         options={{
+            tabBarIcon: (tabInfo) => {
+                return (
+                <MaterialCommunityIcons
+                    name="progress-star"
+                    size={24}
+                    color={tabInfo.focused ? "#1F646D" : "#ffffff"}
+                />
+                )}
+        }}/>
+        <Tab.Screen name="CalendarioMenu" component={StackScreen4Calendario}
+         options={{
+            tabBarIcon: (tabInfo) => {
+                return (
+                <Foundation 
+                    name="calendar"
+                    size={24}
+                    color={tabInfo.focused ? "#1F646D" : "#ffffff"}
+                />
+                )}
+        }}/>
+        <Tab.Screen name="PerfilMenu" component={StackScreen5Perfi}
+         options={{
+            tabBarIcon: (tabInfo) => {
+                return (
+                <Ionicons
+                    name="md-person-circle-outline"
+                    size={24}
+                    color={tabInfo.focused ? "#1F646D" : "#ffffff"}
+                />
+                )}
+        }}/>
     </Tab.Navigator>
     );
   }
