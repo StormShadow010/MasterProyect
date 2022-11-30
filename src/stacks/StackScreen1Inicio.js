@@ -27,6 +27,13 @@ const FondoHeader = () => (
     style={{width: '100%', height: '180%'}}
   />
 );
+const FondoHeader2 = () => (
+    <Image
+      source={require('../../imagenes/header2.png')}
+      //style={{width: 300, height: '180%', }}
+      style={{width: '100%', height: '180%'}}
+    />
+  );
 
 const BackImage = () => (
   <Image
@@ -35,10 +42,20 @@ const BackImage = () => (
   />
 );
 
+const BackImage2 = () => (
+    <Image
+      source={require('../../imagenes/arrow2.png')}
+      style={{width: 35, height: 35, marginLeft:15}}
+    />
+  );
+
 function HomeStack() {
     const Tab = createBottomTabNavigator();
     return (
-        <Tab.Navigator>
+        <Tab.Navigator tabBarOptions={{
+            activeTintColor: "#000",
+            activeBackgroundColor: "#feb72b",
+          }}>
         <Tab.Screen name="InicioMenu" component={InicioScreen0Modulos}/>
         <Tab.Screen name="RetosMenu" component={StackScreen2Retos}/>
         <Tab.Screen name="ProgresoMenu" component={StackScreen3Progreso}/>
@@ -113,28 +130,24 @@ export const IntroScreen1Inicio = () => {
                     title:"Bienvenid@",
                     headerTitleStyle: {
                       fontWeight: 'bold',
-                      color:'#ffffff',
+                      color:'#1F646D',
                       fontSize:25,
-                      marginLeft:-30,
+                      marginLeft:-10,
                     },
                     headerTransparent: true,
-                    headerBackImage: BackImage,
+                    headerBackImage: BackImage2,
                     headerStyle: {
                         backgroundColor: 'transparent',
                         shadowColor: 'transparent',
                         
                     },
-                    headerBackground:FondoHeader,
+                    headerBackground:FondoHeader2,
                     }}/>
             <IntoStack.Screen 
                 name="Inicio1" 
                 component={HomeStack} 
                 options={{
-                    title:false,
-                    headerStyle: {
-                        backgroundColor: '#1F646D',
-                        shadowColor:'transparent',
-                    },
+                    headerShown: false,
                 }}/>
             <IntoStack.Screen 
                 name="Inicio2" 

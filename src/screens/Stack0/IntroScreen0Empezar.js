@@ -3,7 +3,7 @@ import { useNavigation } from '@react-navigation/native';
 import { View, Text, ImageBackground, StyleSheet,Button, Image, TouchableOpacity, Dimensions} from 'react-native'
 import svg,{Path, Svg} from 'react-native-svg';
 
-const yourPicture = require('../../../imagenes/FondoIntro0.png')
+
 
 export const IntroScreen0Empezar = () => {
     const navigation=useNavigation();

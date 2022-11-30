@@ -3,6 +3,7 @@ import React,{useState} from 'react'
 import { View, Text } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs' //para pestañas de menu
 import { NavigationContainer } from '@react-navigation/native';
+import { Ionicons } from "@expo/vector-icons";
 //stacks
 import StackScreen5Perfil from './stacks/StackScreen5Perfil';
 import StackScreen0Intro from './stacks/StackScreen0Intro';
@@ -73,12 +74,19 @@ export const Getinfo = ({handleJoin}) => {
     const Tab = createBottomTabNavigator();
     if(handleJoin=="true"){
         return (
-            <Tab.Navigator>
+            <Tab.Navigator 
+                tabBarOptions={{
+                activeTintColor: "#000",
+                activeBackgroundColor: "#feb72b",
+              }}>
                 <Tab.Screen 
                     name="InicioMenu" 
                     component={StackScreen1Inicio}
                     options={{
                         headerShown: false,
+                        tabBarIcon: ({ color, size }) => (
+                            <Ionicons name="ios-home" size={size} color={color} />
+                        ),
                     }}/>
                 <Tab.Screen 
                     name="RetosMenu" 

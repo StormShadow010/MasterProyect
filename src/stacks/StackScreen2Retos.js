@@ -30,7 +30,7 @@ const StackScreen2Retos = () => {
                 options={{
                     title:false,
                     headerStyle: {
-                        backgroundColor: '#1F646D',
+                        backgroundColor: '#B404F4',
                         shadowColor:'transparent',
                     },
                 }}/>

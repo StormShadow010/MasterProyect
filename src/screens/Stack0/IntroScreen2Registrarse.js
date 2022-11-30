@@ -8,8 +8,6 @@ import { firebaseConfig } from '../../../firebase-config';
 import {  getDatabase, ref, set } from "firebase/database";
 //import { SafeAreaView } from 'react-native-safe-area-context';
 
-const yourPicture = require('../../../imagenes/Registro.png')
-
 function RegisterScreen(){
   const [nombre, setNombre] = React.useState('');
   const [apellido, setApellido] = React.useState('');

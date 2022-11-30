@@ -7,8 +7,6 @@ import {getAuth,signInWithEmailAndPassword} from 'firebase/auth';
 import {initializeApp} from 'firebase/app';
 import { firebaseConfig } from '../../../firebase-config';
 
-const yourPicture = require('../../../imagenes/login2.jpg');
-
 function LoginScreen(){
   const [correo, setCorreo] = React.useState('');
   const [contra, setContra] = React.useState('');
